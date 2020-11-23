@@ -13,6 +13,8 @@
 		F09954CE256C156D001A25F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F09954CC256C156D001A25F9 /* Main.storyboard */; };
 		F09954D0256C156E001A25F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F09954CF256C156E001A25F9 /* Assets.xcassets */; };
 		F09954D3256C156E001A25F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F09954D1256C156E001A25F9 /* LaunchScreen.storyboard */; };
+		F09954E1256C354D001A25F9 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F09954DF256C354D001A25F9 /* start.mp3 */; };
+		F09954E2256C354D001A25F9 /* lock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F09954E0256C354D001A25F9 /* lock.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		F09954CF256C156E001A25F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F09954D2256C156E001A25F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F09954D4256C156E001A25F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F09954DF256C354D001A25F9 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
+		F09954E0256C354D001A25F9 /* lock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lock.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				F09954CC256C156D001A25F9 /* Main.storyboard */,
 				F09954CF256C156E001A25F9 /* Assets.xcassets */,
 				F09954D1256C156E001A25F9 /* LaunchScreen.storyboard */,
+				F09954E0256C354D001A25F9 /* lock.mp3 */,
+				F09954DF256C354D001A25F9 /* start.mp3 */,
 				F09954D4256C156E001A25F9 /* Info.plist */,
 			);
 			path = Parking;
@@ -125,6 +131,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F09954D3256C156E001A25F9 /* LaunchScreen.storyboard in Resources */,
+				F09954E2256C354D001A25F9 /* lock.mp3 in Resources */,
+				F09954E1256C354D001A25F9 /* start.mp3 in Resources */,
 				F09954D0256C156E001A25F9 /* Assets.xcassets in Resources */,
 				F09954CE256C156D001A25F9 /* Main.storyboard in Resources */,
 			);
