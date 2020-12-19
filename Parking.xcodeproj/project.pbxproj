@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9D3D3A4BC951F269D69708DC /* Pods_Parking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD94377CB8456E780E0DAE3 /* Pods_Parking.framework */; };
-		F0657846258E244F007637EE /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F0657845258E244F007637EE /* MBProgressHUD.m */; };
 		F06D9E54258E20D30075940E /* BluetoothSerial.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06D9E53258E20D30075940E /* BluetoothSerial.swift */; };
 		F09954C7256C156D001A25F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09954C6256C156D001A25F9 /* AppDelegate.swift */; };
 		F09954C9256C156D001A25F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09954C8256C156D001A25F9 /* SceneDelegate.swift */; };
@@ -18,6 +17,7 @@
 		F09954D3256C156E001A25F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F09954D1256C156E001A25F9 /* LaunchScreen.storyboard */; };
 		F09954E1256C354D001A25F9 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F09954DF256C354D001A25F9 /* start.mp3 */; };
 		F09954E2256C354D001A25F9 /* lock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F09954E0256C354D001A25F9 /* lock.mp3 */; };
+		F09CC5FE258E5EDB0089353F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F065784E258E5E3B007637EE /* MBProgressHUD.m */; };
 		F0BC8D0C258E1FE500266752 /* DiscoverSpotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC8D0B258E1FE500266752 /* DiscoverSpotsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,9 +25,9 @@
 		1D81CDD5AF3CC33779284AC8 /* Pods-Parking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parking.release.xcconfig"; path = "Target Support Files/Pods-Parking/Pods-Parking.release.xcconfig"; sourceTree = "<group>"; };
 		2BD94377CB8456E780E0DAE3 /* Pods_Parking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		994876A52DE1A02D19F1D877 /* Pods-Parking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parking.debug.xcconfig"; path = "Target Support Files/Pods-Parking/Pods-Parking.debug.xcconfig"; sourceTree = "<group>"; };
-		F0657842258E243A007637EE /* Parking-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Parking-Bridging-Header.h"; path = "../../HM10-BluetoothSerial-iOS/HM10 Serial/Parking-Bridging-Header.h"; sourceTree = "<group>"; };
-		F0657843258E2443007637EE /* MBProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = "../../HM10-BluetoothSerial-iOS/HM10 Serial/MBProgressHUD.h"; sourceTree = "<group>"; };
-		F0657845258E244F007637EE /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = "../../HM10-BluetoothSerial-iOS/HM10 Serial/MBProgressHUD.m"; sourceTree = "<group>"; };
+		F034CAEB258E5E8800681D1F /* Parking-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Parking-Bridging-Header.h"; sourceTree = "<group>"; };
+		F065784D258E5E38007637EE /* MBProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		F065784E258E5E3B007637EE /* MBProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		F06D9E53258E20D30075940E /* BluetoothSerial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothSerial.swift; sourceTree = "<group>"; };
 		F09954C3256C156D001A25F9 /* Parking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09954C6256C156D001A25F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +90,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F065784C258E5E25007637EE /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				F065784E258E5E3B007637EE /* MBProgressHUD.m */,
+				F034CAEB258E5E8800681D1F /* Parking-Bridging-Header.h */,
+				F065784D258E5E38007637EE /* MBProgressHUD.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
 		F09954BA256C156D001A25F9 = {
 			isa = PBXGroup;
 			children = (
@@ -111,17 +121,15 @@
 		F09954C5256C156D001A25F9 /* Parking */ = {
 			isa = PBXGroup;
 			children = (
+				F065784C258E5E25007637EE /* Headers */,
 				F09954C6256C156D001A25F9 /* AppDelegate.swift */,
 				F09954C8256C156D001A25F9 /* SceneDelegate.swift */,
 				F01D82A7258E21D300D3C3F1 /* Views */,
 				F09954CC256C156D001A25F9 /* Main.storyboard */,
-				F0657843258E2443007637EE /* MBProgressHUD.h */,
-				F0657845258E244F007637EE /* MBProgressHUD.m */,
 				F09954CF256C156E001A25F9 /* Assets.xcassets */,
 				F09954D1256C156E001A25F9 /* LaunchScreen.storyboard */,
 				F01D82A8258E21E300D3C3F1 /* Resources */,
 				F09954D4256C156E001A25F9 /* Info.plist */,
-				F0657842258E243A007637EE /* Parking-Bridging-Header.h */,
 			);
 			path = Parking;
 			sourceTree = "<group>";
@@ -226,7 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F09954CB256C156D001A25F9 /* ViewController.swift in Sources */,
-				F0657846258E244F007637EE /* MBProgressHUD.m in Sources */,
+				F09CC5FE258E5EDB0089353F /* MBProgressHUD.m in Sources */,
 				F0BC8D0C258E1FE500266752 /* DiscoverSpotsViewController.swift in Sources */,
 				F09954C7256C156D001A25F9 /* AppDelegate.swift in Sources */,
 				F09954C9256C156D001A25F9 /* SceneDelegate.swift in Sources */,
@@ -388,7 +396,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = georgerosescu.parkingapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/georgerosescu/Desktop/HM10-BluetoothSerial-iOS/HM10 Serial/Parking-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/georgerosescu/Desktop/Parking/Parking/Headers/Parking-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -411,7 +419,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = georgerosescu.parkingapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/georgerosescu/Desktop/HM10-BluetoothSerial-iOS/HM10 Serial/Parking-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/georgerosescu/Desktop/Parking/Parking/Headers/Parking-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

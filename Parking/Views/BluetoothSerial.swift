@@ -8,12 +8,9 @@
 import UIKit
 import CoreBluetooth
 
-/// Global serial handler, don't forget to initialize it with init(delgate:)
 var serial: BluetoothSerial!
 
-// Delegate functions
 protocol BluetoothSerialDelegate: class {
-    // ** Required **
     
     /// Called when de state of the CBCentralManager changes (e.g. when bluetooth is turned on/off)
     func serialDidChangeState()
