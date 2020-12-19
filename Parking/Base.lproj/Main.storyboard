@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YEH-Z6-XBJ">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,6 +32,17 @@
                                 <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
                                 <size key="shadowOffset" width="-5" height="4"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJY-Jw-sEg">
+                                <rect key="frame" x="20" y="20" width="130" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                <state key="normal" title="Find Parking Spot">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Hqn-j5-23n" kind="presentation" id="mkn-IZ-Czq"/>
+                                </connections>
+                            </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Empty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhC-VI-yLd">
                                 <rect key="frame" x="53" y="444" width="307" height="97.666666666666657"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -55,6 +66,7 @@
                             <constraint firstItem="b0O-7L-3l6" firstAttribute="bottom" secondItem="O82-kQ-dC6" secondAttribute="bottom" id="xst-ki-GiJ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Cha-z4-kYa"/>
                     <connections>
                         <outlet property="backgroundImage" destination="O82-kQ-dC6" id="zaI-e6-82C"/>
                         <outlet property="busyStateLabel" destination="zm5-gA-kob" id="Jg2-Ee-X8w"/>
@@ -63,7 +75,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="111.59420289855073" y="93.75"/>
+            <point key="canvasLocation" x="1018.840579710145" y="93.750000000000014"/>
+        </scene>
+        <!--Discover Spots View Controller-->
+        <scene sceneID="9Po-lX-iRA">
+            <objects>
+                <viewController storyboardIdentifier="DiscoverSpotsViewController" id="Hqn-j5-23n" customClass="DiscoverSpotsViewController" customModule="Parking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RPf-iq-bkh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nw0-ig-2nE">
+                                <rect key="frame" x="0.0" y="56" width="414" height="660"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking Spots" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCX-2L-LJw">
+                                <rect key="frame" x="136" y="15" width="143" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="5MZ-GN-k5g"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="143" id="UwP-oU-a8B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
+                                <color key="textColor" red="0.058823529409999999" green="0.18823529410000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jEL-aZ-AaT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jEL-aZ-AaT" firstAttribute="trailing" secondItem="Nw0-ig-2nE" secondAttribute="trailing" id="6qc-xk-sFh"/>
+                            <constraint firstItem="jEL-aZ-AaT" firstAttribute="trailing" secondItem="jCX-2L-LJw" secondAttribute="trailing" constant="135" id="8ZI-cX-ZJf"/>
+                            <constraint firstItem="Nw0-ig-2nE" firstAttribute="top" secondItem="jCX-2L-LJw" secondAttribute="bottom" constant="10" id="BiH-XD-FZi"/>
+                            <constraint firstItem="jEL-aZ-AaT" firstAttribute="bottom" secondItem="Nw0-ig-2nE" secondAttribute="bottom" id="OSX-9c-v6W"/>
+                            <constraint firstItem="jCX-2L-LJw" firstAttribute="leading" secondItem="jEL-aZ-AaT" secondAttribute="leading" constant="136" id="Smj-f5-Rg3"/>
+                            <constraint firstItem="Nw0-ig-2nE" firstAttribute="leading" secondItem="jEL-aZ-AaT" secondAttribute="leading" id="TsY-Xj-gqV"/>
+                            <constraint firstItem="jCX-2L-LJw" firstAttribute="top" secondItem="jEL-aZ-AaT" secondAttribute="top" constant="15" id="eg8-A8-ECJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="K3N-DG-U1k"/>
+                    <connections>
+                        <outlet property="tableView" destination="Nw0-ig-2nE" id="gZT-un-Ls1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KPI-sd-nxv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1715.9420289855075" y="93.750000000000014"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nMa-Wi-Q6V">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="YEH-Z6-XBJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qdd-fp-qQy">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AeT-IO-OS4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lot-nc-wMB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="111.59420289855073" y="93.750000000000014"/>
         </scene>
     </scenes>
     <resources>

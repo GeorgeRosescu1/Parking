@@ -7,8 +7,9 @@
 
 import UIKit
 import AVFoundation
+import CoreBluetooth
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, BluetoothSerialDelegate {
     
     @IBOutlet weak var busyStateLabel: UILabel!
     @IBOutlet weak var emptyStateLabel: UILabel!
@@ -23,8 +24,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        serial = BluetoothSerial(delegate: self)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadView), name: NSNotification.Name(rawValue: "reloadStartViewController"), object: nil)
+        
         emptyLabelOriginalCoord = emptyStateLabel.frame.origin
         busyLabelOriginalCoord = busyStateLabel.frame.origin
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,5 +80,38 @@ class ViewController: UIViewController {
         }
     }
     
+    @objc func reloadView() {
+        // in case we're the visible view again
+        serial.delegate = self
+        
+        if serial.isReady {
+           print("Ready")
+            print(serial.connectedPeripheral)
+        } else if serial.centralManager.state == .poweredOn {
+            print("not")
+        } else {
+           print("a")
+        }
+    }
+    
+    func serialDidReceiveString(_ message: String) {
+        print(message)
+    }
+    
+    func serialDidDisconnect(_ peripheral: CBPeripheral, error: NSError?) {
+        let hud = MBProgressHUD.showAdded(to: view, animated: true)
+        hud?.mode = MBProgressHUDMode.text
+        hud?.labelText = "Disconnected"
+        hud?.hide(true, afterDelay: 1.0)
+    }
+    
+    func serialDidChangeState() {
+        if serial.centralManager.state != .poweredOn {
+            let hud = MBProgressHUD.showAdded(to: view, animated: true)
+            hud?.mode = MBProgressHUDMode.text
+            hud?.labelText = "Bluetooth turned off"
+            hud?.hide(true, afterDelay: 1.0)
+        }
+        
+    }
 }
-
