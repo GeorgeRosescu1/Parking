@@ -13,7 +13,6 @@ class ViewController: UIViewController, BluetoothSerialDelegate {
     
     @IBOutlet weak var findSpotButton: UIButton!
     @IBOutlet weak var coverView: UIView!
-    @IBOutlet weak var busyStateLabel: UILabel!
     @IBOutlet weak var spotStatusLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
     
@@ -29,8 +28,6 @@ class ViewController: UIViewController, BluetoothSerialDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadView), name: NSNotification.Name(rawValue: "reloadStartViewController"), object: nil)        
     }
     
-    
-    
     @objc func reloadView() {
         serial.delegate = self
         
@@ -40,16 +37,13 @@ class ViewController: UIViewController, BluetoothSerialDelegate {
         } else if serial.centralManager.state == .poweredOn {
             findSpotButton.isHidden = false
             coverView.isHidden = false
-            spotStatusLabel.isHidden = true
         } else {
             findSpotButton.isHidden = false
             coverView.isHidden = false
-            spotStatusLabel.isHidden = true
         }
     }
     
-    func serialDidReceiveString(_ message: String) {
-        spotStatusLabel.isHidden = false
+     func serialDidReceiveString(_ message: String) {
         if message == "t" {
             let lockSoundPath = Bundle.main.path(forResource: "lock.mp3", ofType: nil)!
             let lockSoundUrl = URL(fileURLWithPath: lockSoundPath)
